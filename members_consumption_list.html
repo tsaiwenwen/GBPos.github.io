@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>京鋐 WEB POS</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+	
+  <link rel="stylesheet" href="dist/css/style.css">
+	
+</head>
+	
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav ">
+      <li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a></li>
+      <li class="nav-item d-none d-sm-inline-block">
+      
+          <nav>
+            <ol style="padding: 0;">
+              <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+              <li class="breadcrumb-item"><a href="sales_operation.html">銷貨作業</a></li>
+              <li class="breadcrumb-item active" aria-current="page">會員消費明細查詢</li>
+            </ol>
+          </nav>    
+      
+      </li>
+    </ul>
+    
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+    
+      <!-- user Dropdown Menu -->
+      <li class="dropdown user user-menu open">
+        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
+          <i class="fas fa-user my-user-icon"></i> <strong class="hidden-xs">Alexander</strong>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <div class="dropdown-divider"></div>
+          <a href="recover-password.html" class="dropdown-item" style="text-align:center;">密碼變更</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item dropdown-footer">登出 <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </li>
+              
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+  
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-light-info elevation-2">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-link">
+      <img src="dist/img/logo.png" alt="logo" class="brand-image">
+      <span class="brand-text font-weight-light">京鋐 <b class="my-brand-text">WEB POS</b></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item"><a href="barcode_inventory.html" class="nav-link"><i class="nav-icon fas fa-barcode"></i><p>條碼庫存</p></a></li>
+          <li class="nav-item"><a href="sales_operation.html" class="nav-link active"><i class="nav-icon fas fa-shopping-cart"></i><p>銷貨作業</p></a></li>
+          <li class="nav-item"><a href="industry_performance.html" class="nav-link"><i class="nav-icon fas fa-chart-line"></i><p>同業業績</p></a></li>
+          <li class="nav-item"><a href="member_profile.html" class="nav-link"><i class="nav-icon fas fa-address-card"></i><p>會員資料</p></a></li>
+          <li class="nav-item"><a href="transfer_out.html" class="nav-link"><i class="nav-icon fas fa-truck-loading"></i><p>調出作業</p></a></li>
+          <li class="nav-item"><a href="transfer_in.html" class="nav-link"><i class="nav-icon fas fa-dolly"></i><p>調入作業</p></a></li>
+          <li class="nav-item"><a href="inventory_details.html" class="nav-link"><i class="nav-icon fas fa-cubes"></i><p>庫存明細</p></a></li>
+          <li class="nav-item"><a href="in_and_out.html" class="nav-link"><i class="nav-icon fas fa-truck"></i><p>商品進出</p></a></li>
+          <li class="nav-item"><a href="checkout.html" class="nav-link"><i class="nav-icon fas fa-cash-register"></i><p>銷貨結帳</p></a></li>
+          <li class="nav-item"><a href="system_setting.html" class="nav-link"><i class="nav-icon fas fa-cog"></i><p>系統設定</p></a></li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content pt-3">
+        <div class="container-fluid">
+
+            <div class="row">
+				
+				<div class="col-12">
+					<h4 class="serch-title text-center ml-4">會員消費明細查詢<i class="fas fa-search ml-1"></i></h4>
+				</div>
+				
+                <div class="col-12">
+ 					
+					
+					<div class="card">
+					  <div class="card-header">
+
+						<div class="row">
+							
+							<div class="col-12 col-md-6 col-sm-6">
+							  <div class="input-group mt-2 mb-2">
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>會員手機</label>
+								  </div>                                      
+								  <input type="search" class="form-control" placeholder="" value="">
+							  </div>
+							</div>
+							
+							<div class="col-12 col-md-6 col-sm-6">
+							  <div class="input-group mt-2 mb-2">
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>銷售日期</label>
+								  </div>  
+								  <div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+								  </div>  
+								  <input type="search" class="form-control float-right" id="reservation">
+							  </div>
+							</div>
+							
+							<div class="col-12 col-md-6 col-sm-6">
+							  <div class="input-group mt-2 mb-2">
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>會員編號</label>
+								  </div>                                      
+								  <input type="search" class="form-control" placeholder="" value="">
+							  </div>
+							</div>
+
+							<div class="col-12 col-md-6 col-sm-6">
+							  <div class="input-group mt-2 mb-2">
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>會員姓名</label>
+								  </div>                                      
+								  <input type="search" class="form-control" placeholder="" value="">
+							  </div>
+							</div>
+									
+						    <div class="col-12 text-center">
+							   <input type="submit" value="查詢" class="btn btn-info mt-2" onclick="">
+						    </div>
+							
+                        </div>	
+						  
+					  </div><!-- /.card-header -->
+									
+					  <div class="card-body table-responsive p-0">
+						<table id="example2" class="table table-head-fixed text-nowrap table-striped table-hover table-first-child">
+						  <thead>
+						  <tr>
+							  <th></th>
+							  <th>銷售庫點</th>
+							  <th>銷售日期</th>
+							  <th>商品型號</th>
+							  <th>段碼</th>
+							  <th>尺碼</th>
+							  <th>折數</th>
+							  <th>單價</th>
+							  <th>數量</th>
+							  <th>金額</th>
+						  </tr>
+						  </thead>
+						  <tbody>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
+									  <label for="customCheckbox1" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox2" value="option2">
+									  <label for="customCheckbox2" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox3" value="option3">
+									  <label for="customCheckbox3" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0001</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox4" value="option4">
+									  <label for="customCheckbox4" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0001</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox5" value="option5">
+									  <label for="customCheckbox5" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0001</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox6" value="option6">
+									  <label for="customCheckbox6" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox7" value="option7">
+									  <label for="customCheckbox7" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox8" value="option8">
+									  <label for="customCheckbox8" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0001</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox9" value="option9">
+									  <label for="customCheckbox9" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0001</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox10" value="option10">
+									  <label for="customCheckbox10" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox11" value="option11">
+									  <label for="customCheckbox11" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  <tr>
+							  <td>
+								  <div class="custom-control custom-checkbox">
+									  <input class="custom-control-input" type="checkbox" id="customCheckbox12" value="option12">
+									  <label for="customCheckbox12" class="custom-control-label"></label>
+								  </div>
+							  </td>
+							  <td>0000</td>
+							  <td>2020/12/01</td>
+							  <td>00001-200001-01</td>
+							  <td>0</td>
+							  <td>PCS</td>
+							  <td>100.00</td>
+							  <td>1,000</td>
+							  <td>2</td>
+							  <td>2,000</td>
+						  </tr>
+						  </tbody>
+						  <tfoot>
+						  </tfoot>
+						</table>
+					  </div>
+					  <!-- /.card-body -->
+                      <div class="card-footer">
+                        <div class="row">
+                          <div class="col-12 text-center">
+                            <a href="sales_operation.html" class="btn btn-secondary">取消</a>
+                            <input type="submit" value="確定" class="btn btn-info" onclick="location.href='sales_operation.html'">
+                          </div>
+                        </div>                  
+                      </div><!-- /.card-footer -->
+					</div>
+					<!-- /.card --> 
+ 
+                </div><!-- /.col-md-10 -->
+            </div><!-- /.row -->
+                              
+                        
+        </div>
+    </section>
+  </div>
+
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- Default to the left -->
+    <strong>Copyright &copy; <span class="text-b" >GBTech</span></strong>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<script>
+    $(function () {
+      $('.select2').select2()
+    });
+</script>
+
+	
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": false,
+    });
+  });
+</script>
+
+	
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script>
+  $(function () {
+    //Date range picker
+    $('#reservation').daterangepicker({
+          autoUpdateInput: false,
+		  locale: {
+			  cancelLabel: 'Clear'
+		  }
+    });
+	  
+	$('#reservation').on('apply.daterangepicker', function(ev, picker) {
+		  $(this).val(picker.startDate.format('YYYY/MM/DD') + ' ~ ' + picker.endDate.format('YYYY/MM/DD'));
+	  });
+	  
+  }) 
+</script>
+	
+  
+</body>
+</html>

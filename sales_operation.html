@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>京鋐 WEB POS</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+  <link rel="stylesheet" href="dist/css/style.css">
+
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a></li>
+      <li class="nav-item d-none d-sm-inline-block">
+      
+          <nav>
+            <ol style="padding: 0;">
+              <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+              <li class="breadcrumb-item active" aria-current="page">銷貨作業</li>
+            </ol>
+          </nav>    
+              
+      </li>
+    </ul>
+    
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+    
+      <!-- user Dropdown Menu -->
+      <li class="dropdown user user-menu open">
+        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="true">
+          <i class="fas fa-user my-user-icon"></i> <strong class="hidden-xs">Alexander</strong>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <div class="dropdown-divider"></div>
+          <a href="recover-password.html" class="dropdown-item" style="text-align:center;">密碼變更</a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html" class="dropdown-item dropdown-footer">登出 <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </li>
+              
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+  
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-light-info elevation-2">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-link">
+      <img src="dist/img/logo.png" alt="logo" class="brand-image">
+      <span class="brand-text font-weight-light">京鋐 <b class="my-brand-text">WEB POS</b></span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item"><a href="barcode_inventory.html" class="nav-link"><i class="nav-icon fas fa-barcode"></i><p>條碼庫存</p></a></li>
+          <li class="nav-item"><a href="sales_operation.html" class="nav-link active"><i class="nav-icon fas fa-shopping-cart"></i><p>銷貨作業</p></a></li>
+          <li class="nav-item"><a href="industry_performance.html" class="nav-link"><i class="nav-icon fas fa-chart-line"></i><p>同業業績</p></a></li>
+          <li class="nav-item"><a href="member_profile.html" class="nav-link"><i class="nav-icon fas fa-address-card"></i><p>會員資料</p></a></li>
+          <li class="nav-item"><a href="transfer_out.html" class="nav-link"><i class="nav-icon fas fa-truck-loading"></i><p>調出作業</p></a></li>
+          <li class="nav-item"><a href="transfer_in.html" class="nav-link"><i class="nav-icon fas fa-dolly"></i><p>調入作業</p></a></li>
+          <li class="nav-item"><a href="inventory_details.html" class="nav-link"><i class="nav-icon fas fa-cubes"></i><p>庫存明細</p></a></li>
+          <li class="nav-item"><a href="in_and_out.html" class="nav-link"><i class="nav-icon fas fa-truck"></i><p>商品進出</p></a></li>
+          <li class="nav-item"><a href="checkout.html" class="nav-link"><i class="nav-icon fas fa-cash-register"></i><p>銷貨結帳</p></a></li>
+          <li class="nav-item"><a href="system_setting.html" class="nav-link"><i class="nav-icon fas fa-cog"></i><p>系統設定</p></a></li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+
+    <!-- Main content -->
+    <div class="content pt-3">
+      <div class="container-fluid">
+ 
+ 
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-9">
+              
+            <div class="row"> 
+              <div class="col-12 col-sm-6 col-md-6 d-flex align-items-stretch">
+                <div class="card card-primary">
+                  <!-- form start -->
+                  <form>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>銷售庫點</label>
+                          </div>
+						  <input type="text" class="form-control" placeholder="00001 總公司" disabled="">
+                        </div>                             
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>銷售人員</label>
+                          </div>
+						  <input type="search" class="form-control" placeholder="001" />
+                          <input type="text" class="form-control" placeholder="Alexander" disabled="">
+                          <span class="input-group-append">
+                            <button type="button" class="btn btn-default" onclick="location.href='staff_list.html'"><i class="fas fa-search"></i></button>
+                          </span>
+                        </div>                             
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>會員編號</label>
+                          </div>
+                          <input type="search" class="form-control" placeholder="123456789">
+						  <input type="text" class="form-control" placeholder="Jolin" disabled="">
+                          <span class="input-group-append">
+                            <button type="button" class="btn btn-default" onclick="location.href='members_list.html'"><i class="fas fa-search"></i></button>
+                          </span>
+                        </div>                             
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>會員手機</label>
+                          </div>
+                          <input type="search" class="form-control" placeholder="0900111222">
+                          <span class="input-group-append">
+                            <button type="button" class="btn btn-default" onclick="location.href='members_list.html'"><i class="fas fa-search"></i></button>
+                          </span>
+                        </div>  
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>會員級別</label>
+                          </div>
+                          <input type="text" class="form-control" placeholder="一般會員" disabled="">
+                          <div class="input-group-prepend">
+                            <label for="" class="card-label pl-2">點數</label>
+                          </div>
+						  <input type="text" class="form-control" placeholder="200" disabled="">
+                          <span class="input-group-append">
+                            <button type="button" class="btn btn-default" onclick="location.href='members_consumption_list.html'"><i class="fas fa-list-ul"></i></button>
+                          </span>
+                        </div> 
+                    </div><!-- /.card-body -->
+                        
+                  </form>
+                    
+                </div>
+              </div><!-- /.col -->
+              
+              <div class="col-12 col-sm-6 col-md-6 d-flex align-items-stretch">
+                <div class="card card-primary">
+                    <div class="card-body prduct">
+                    
+                      <div class="row">
+                        <div class="col-12 col-sm-12 col-md-7 d-flex justify-content-center align-items-center">
+                          <img src="dist/img/prod-1.jpg" class="product-image" alt="">
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-5 d-flex justify-content-center align-items-center">
+                          <div class="row">
+							  <div class="col-12">
+								  <div class="bg-gray py-2 px-3">
+									<p class="pt-2">00025-20190830-1 黑色</p>
+									<div class="dropdown-divider"></div>
+									<h2 class="mb-0"><small>$ </small>1,980</h2>							
+								  </div>
+							  </div>
+							  <div class="col-12 py-2 px-3 mt-2 text-center">
+								  <button type="submit" class="btn btn-info mb-1 my-btn" onclick="location.href='commodity_stocks_list.html'">商品庫存</button>
+							  </div>
+						  </div>
+                        </div>
+                      </div>                                  
+                                   
+                    </div>                                  
+                </div>                  
+              </div><!-- /.col -->
+       
+              <div class="col-12">
+                <div class="card">
+				  <div class="card-header">
+					  <div class="row">
+						<div class="col-12 col-sm-6 col-md-6">
+							<div class="input-group mb-2 mt-2">
+							  <div class="input-group-prepend">
+								<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>銷售類別</label>
+							  </div>
+                              <select class="custom-select">
+                                <option></option>
+                                <option>銷貨</option>
+                                <option>銷貨</option>
+                              </select>
+							</div>
+							<div class="input-group mb-2 mt-2">
+							  <div class="input-group-prepend">
+								<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>商品型號／條碼</label>
+							  </div>
+							  <input type="search" class="form-control" placeholder="">
+							  <span class="input-group-append">
+								<button type="button" class="btn btn-default" onclick="location.href='product_number_list.html'"><i class="fas fa-search"></i></button>
+							  </span>
+							</div>
+							<div class="input-group mb-2 mt-2">
+							  <div class="input-group-prepend">
+								<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>退貨單號</label>
+							  </div>
+						      <input type="search" class="form-control" placeholder="" value="">
+							</div>                             
+							<div class="input-group mb-2 mt-2">
+							  <div class="input-group-prepend">
+								<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>備&emsp;&emsp;註</label>
+							  </div>
+                              <textarea class="form-control" rows="1" placeholder=""></textarea>
+							</div>                             
+						</div>
+						  
+						<div class="col-12 col-sm-6 col-md-6">
+							
+							<div class="input-group mb-2 mt-2">
+								
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>段號</label>
+								  </div>
+								  <input type="search" class="form-control" placeholder="1">
+								
+								  <div class="input-group-prepend">
+									<label for="" class="card-label ml-2"><i class="fas fa-caret-right mr-2 text-y"></i>尺碼</label>
+								  </div>
+								  <input type="search" class="form-control" placeholder="35">
+								
+							</div>			
+							
+							<div class="input-group mb-2 mt-2">
+								
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>折數</label>
+								  </div>
+								  <input type="search" class="form-control mr-2" placeholder="100">
+								
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>單價</label>
+								  </div>
+								  <input type="search" class="form-control" placeholder="2,500">
+								
+							</div>	
+							
+							<div class="input-group mb-2 mt-2">	
+								
+								  <div class="input-group-prepend">
+									<label for="" class="card-label"><i class="fas fa-caret-right mr-2 text-y"></i>數量</label>
+								  </div>
+								  <input type="search" class="form-control" placeholder="3">
+								
+								  <div class="input-group-prepend">
+									<label for="" class="card-label ml-2"><i class="fas fa-caret-right mr-2 text-y"></i>金額</label>
+								  </div>
+								  <input type="search" class="form-control" placeholder="7,500">
+								
+							</div>
+							
+							<button type="button" class="btn btn-info float-right" onclick="location.href=''"><i class="fas fa-arrow-right"></i></button>
+							
+						</div>
+						  
+						<div class="col-12 col-sm-6 col-md-6 mb-2">
+
+						</div>
+						  
+						  <div class="col-sm-9 col-md-9">
+							<button type="submit" class="btn btn-info mb-1 my-btn">寄存</button>
+							<button type="submit" class="btn btn-info mb-1 my-btn">取寄存</button>
+							<button type="submit" class="btn btn-info mb-1 my-btn" onclick="location.href='coupon_select.html'">禮券</button>
+							<button type="submit" class="btn btn-info mb-1 my-btn">交班傳票</button>
+							<button type="submit" class="btn btn-info mb-1 my-btn">取消交易</button>
+							<button type="submit" class="btn btn-info mb-1 my-btn" onclick="location.href='sales_order_list.html'">訂貨</button>
+							<button type="submit" class="btn btn-info mb-1 my-btn" onclick="location.href='consignment_inventory_list.html'">提貨</button>
+						  </div>
+						  <div class="col-sm-3 col-md-3">
+							<button type="submit" class="btn btn-info mb-1 my-btn float-right">自動匹配</button>
+						  </div>
+						  
+					  </div>
+					  
+					  
+				  </div>
+                  <div class="card-body table-responsive p-0" style="height:400px;">
+					  
+                    <table class="table table-head-fixed text-nowrap table-striped">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>序號</th>
+                          <th style="min-width:100px;">銷別</th>
+                          <th style="min-width:200px;">商品型號</th>
+                          <th style="min-width:100px;">段號</th>
+                          <th style="min-width:100px;">尺碼</th>
+                          <th style="min-width:100px;">折數</th>
+                          <th style="min-width:120px;">單價</th>
+                          <th style="min-width:100px;">數量</th>
+                          <th style="min-width:120px;">金額</th>
+                          <th style="min-width:150px;">組合專案</th>
+                          <th style="min-width:100px;">點數</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="project-actions">
+                              <a class="btn btn-primary btn-xs" href="commodity_stocks_list.html"><i class="fas fa-list-ul"></i></a>
+                              <a class="btn btn-success btn-xs" href="#"><i class="fas fa-pencil-alt"></i></a>
+                              <a class="btn btn-danger btn-xs" href="#"><i class="fas fa-trash"></i></a>
+                          </td> 
+                          <td>001</td>
+                          <td><input type="text" class="form-control" placeholder="銷貨"></td>
+                          <td><input type="text" class="form-control" placeholder="00025-20190830-1"></td>
+                          <td><input type="text" class="form-control" placeholder="1"></td>
+                          <td><input type="text" class="form-control" placeholder="35"> </td>
+                          <td><input type="text" class="form-control" placeholder="100"></td>
+                          <td><input type="text" class="form-control" placeholder="2,500"></td>
+                          <td><input type="text" class="form-control" placeholder="3"></td>
+                          <td><input type="text" class="form-control" placeholder="7,500"></td>
+						  <td>
+							  <div class="input-group mb-2 mt-2">
+								  <div class="input-group-prepend">
+								  </div>
+								  <input type="search" class="form-control" placeholder="">
+								  <span class="input-group-append">
+									<button type="button" class="btn btn-default" onclick="location.href='combination_project.html'"><i class="fas fa-search"></i></button>
+								  </span>
+							  </div>
+						  </td>
+						  <td><input type="text" class="form-control" placeholder=""></td>
+                        </tr>
+						  
+                        <tr>
+                          <td class="project-actions">
+                              <a class="btn btn-primary btn-xs" href="commodity_stocks_list.html"><i class="fas fa-list-ul"></i></a>
+                              <a class="btn btn-success btn-xs" href="#"><i class="fas fa-pencil-alt"></i></a>
+                              <a class="btn btn-danger btn-xs" href="#"><i class="fas fa-trash"></i></a>
+                          </td> 
+                          <td>002</td>
+                          <td><input type="text" class="form-control" placeholder="銷貨"></td>
+                          <td><input type="text" class="form-control" placeholder="00025-20190830-2"></td>
+                          <td><input type="text" class="form-control" placeholder="1"></td>
+                          <td><input type="text" class="form-control" placeholder="35"> </td>
+                          <td><input type="text" class="form-control" placeholder="100"></td>
+                          <td><input type="text" class="form-control" placeholder="2,500"></td>
+                          <td><input type="text" class="form-control" placeholder="3"></td>
+                          <td><input type="text" class="form-control" placeholder="7,500"></td>
+						  <td>
+							  <div class="input-group mb-2 mt-2">
+								  <div class="input-group-prepend">
+								  </div>
+								  <input type="search" class="form-control" placeholder="">
+								  <span class="input-group-append">
+									<button type="button" class="btn btn-default" onclick="location.href='combination_project.html'"><i class="fas fa-search"></i></button>
+								  </span>
+							  </div>
+						  </td>
+						  <td><input type="text" class="form-control" placeholder=""></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+					  <tfoot>
+                        <tr>
+                          <td><a class="btn btn-info btn-xs" href="#"><i class="fas fa-plus pl-1 pr-1"></i></a></td>
+                          <td><b>合計&ensp;<i class="fas fa-caret-right text-y"></i></b></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+					  </tfoot>
+                    </table>
+                  </div><!-- /.card-body -->
+                  
+                                        
+                </div><!-- /.card -->
+              </div><!-- /.col -->
+              
+ 
+ 
+             </div><!-- /.row -->
+          
+          </div><!-- /.col -->          
+
+
+        
+          <div class="col-12 col-sm-12 col-md-3 d-flex align-items-stretch">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form>
+                <div class="card-body">
+                  
+
+                    <div class="row"> 
+                        <div class="col-12 col-sm-6 col-md-12">                        
+                          <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">應收金額</label>
+                                  <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                </div>
+                                <input type="search" class="form-control" placeholder="12,000">
+                              </div>                             
+                          </div>
+                        </div><!-- /.col --> 
+                        <div class="col-12 col-sm-6 col-md-12">  
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">取用點數</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="0">
+                              </div>                            
+                            </div>
+                        </div><!-- /.col -->                         
+                        <div class="col-12 col-sm-6 col-md-12">                         
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">刷卡金額</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="0">
+                              </div>                             
+                            </div>
+                        </div><!-- /.col --> 
+                        <div class="col-12 col-sm-6 col-md-12">                         
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">收現金額</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="12,000">
+                              </div>                             
+                            </div>
+                        </div><!-- /.col --> 
+                        <div class="col-12 col-sm-6 col-md-12">                         
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">禮券金額</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="1000">
+                                <span class="input-group-append">
+                                  <button type="button" class="btn btn-default" onclick="location.href='coupon_select.html'"><i class="fas fa-search"></i></button>
+                                </span>
+                              </div>                             
+                            </div>                        
+                        </div><!-- /.col --> 
+                    </div><!-- /.row -->
+                    
+                    
+                    <div class="dropdown-divider mb-4"></div>
+
+
+                    <div class="row">                     
+                        <div class="col-12"> 
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">應找金額</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="12,000">
+                              </div> 
+                            </div>
+                        </div><!-- /.col --> 
+                    </div><!-- /.row -->
+  
+                    
+                    <div class="dropdown-divider mb-4"></div>
+
+
+                    <div class="row">                     
+                        <div class="col-12 col-sm-6 col-md-12"> 
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">統一編號</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="12619555">
+                              </div> 
+                            </div>
+                        </div><!-- /.col --> 
+                        <div class="col-12 col-sm-6 col-md-12">                         
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <label for="" class="card-label">發票編號</label>
+                                </div>
+                                <input type="search" class="form-control" placeholder="AB12345678">
+                                <span class="input-group-append">
+                                  <button type="button" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                </span>
+                              </div> 
+                            </div>
+                        </div><!-- /.col --> 
+                        
+                        
+                    </div><!-- /.row -->
+  
+                    
+                    <div class="dropdown-divider mb-4"></div>
+
+                  
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-info" style="width: 100%;">確定結帳</button>
+                </div>
+                
+              </form>
+              
+            </div>
+          </div><!-- /.col -->
+
+
+        </div><!-- /.row -->
+        
+        
+      </div><!-- /.container-fluid -->
+    </div><!-- /.content -->
+  </div><!-- /.content-wrapper -->
+
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- Default to the left -->
+    <strong>Copyright &copy; <span class="text-b" >GBTech</span></strong>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+</body>
+</html>

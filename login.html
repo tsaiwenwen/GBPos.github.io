@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>京鋐 WEB POS 登入</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+  <link rel="stylesheet" href="dist/css/style.css">  
+  
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    
+    <h2 class="login-title">
+      <strong>京鋐</strong>
+      <b>WEB POS</b>
+    </h2>
+    
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+    
+      <p class="login-box-msg">登入</p>
+      
+      <form action="index.html" method="post">
+      
+        <div class="input-group mb-3">
+          <input type="帳號" class="form-control" placeholder="帳號">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="input-group mb-3">
+          <input type="密碼" class="form-control" placeholder="密碼">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="input-group mb-3" id="box-CAPTCHA">
+               <input type="text" id="input" class="form-control" placeholder="輸入驗證碼" maxlength="6">
+               <div class="CAPTCHA" id="CAPTCHA"></div>
+               <button class="reload" onClick="generateCAPTCHA ()"><i class="fas fa-sync-alt"></i></button>
+
+        </div>
+        
+        <div class="row">
+        
+          <div class="col-8">
+            <div class="icheck-primary">
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" id="remember1" value="option1">
+                <label for="remember1" class="custom-control-label">記住帳號</label>
+              </div>            
+              <div class="custom-control custom-checkbox">
+				<input class="custom-control-input" type="checkbox" id="remember2" value="option2">
+				<label for="remember2" class="custom-control-label">顯示密碼</label>
+              </div>            
+            </div>
+          </div>
+          
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <button id="submit" type="submit" class="btn btn-info btn-block ">登入</button>
+          </div>
+          
+        </div>
+        
+      </form>
+      
+      <p class="mt-3 mb-1">
+        <a href="recover-password.html" class="btn my-btn2 btn-info2">密碼變更</a>
+      </p>
+
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<script>
+
+var input   = document.getElementById("input"),
+    submit  = document.getElementById("submit"),
+    boxCAPTCHA = document.getElementById("box-CAPTCHA"),
+    CAPTCHA = document.getElementById("CAPTCHA");
+
+input.onfocus = function () {
+
+    "use strict";
+    
+    if (this.placeholder === "輸入驗證碼") {
+        
+        this.placeholder = "";
+    }
+    
+};
+
+input.onblur = function () {
+    
+    "use strict";
+    
+    if (this.placeholder === "") {
+        
+        this.placeholder = "輸入驗證碼";
+    }
+    
+};
+
+function generateCAPTCHA() {
+    
+    "use strict";
+    
+    var chars = "abcdefghijklmnopqrstuvwxyz0123456789",
+    
+        CAPTCHALength = 6,
+    
+        randomCAPTCHA = "",
+    
+        i,
+    
+        randomNumber;
+  
+    for (i = 0; i < CAPTCHALength; i = i + 1) {
+        
+        randomNumber = Math.floor(Math.random() * chars.length);
+    
+        randomCAPTCHA += chars.substring(randomNumber, randomNumber + 1);
+    }
+  
+    CAPTCHA.innerHTML = randomCAPTCHA;
+   
+}
+    
+window.onload = generateCAPTCHA();
+
+function back() {
+
+    "use strict";
+  
+    document.getElementById("wrong").style.display = "none";
+    boxCAPTCHA.style.display = "block";    
+    input.value = "";    
+    generateCAPTCHA();
+
+}
+
+</script>
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+</body>
+</html>
